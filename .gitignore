@@ -1,0 +1,15 @@
+.DS_Store
+
+# Xcode 的个人界面状态与本机构建产物
+**/xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+*.xcresult
+*.ipa
+*.app
+*.dSYM/
+
+# Swift Package Manager 的本地缓存
+.build/
+.swiftpm/
