@@ -42,7 +42,7 @@ struct WidgetPlanSnapshot: Codable, Equatable {
 }
 
 enum WidgetSnapshotStore {
-    static let suiteName = "group.com.lvyouxucn.app"
+    static let suiteName = "group.com.lvyouxucn.service"
     static let key = "LvYouXu.widget.plan.v1"
     static let widgetKind = "LvYouXuJourneyWidget"
 

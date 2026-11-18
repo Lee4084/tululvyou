@@ -17,3 +17,37 @@ workflows:
             -derivedDataPath "$CM_BUILD_DIR/DerivedData" \
             CODE_SIGNING_ALLOWED=NO \
             build
+
+  ios-app-store:
+    name: 途鹿旅游 · App Store 提包
+    instance_type: mac_mini_m2
+    max_build_duration: 120
+    # Apple Developer Portal 密钥属于同一开发团队；应用目标由下方 Bundle ID 确定。
+    integrations:
+      app_store_connect: travel-suixin
+    environment:
+      xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.lvyouxucn.app
+    scripts:
+      - name: 设置本次构建号
+        script: |
+          set -euo pipefail
+          agvtool new-version -all "$PROJECT_BUILD_NUMBER"
+      - name: 应用 App Store 签名描述文件
+        script: xcode-project use-profiles
+      - name: 生成签名 IPA
+        script: |
+          set -euo pipefail
+          xcode-project build-ipa \
+            --project "$CM_BUILD_DIR/旅有序.xcodeproj" \
+            --scheme "旅有序"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: false
+        submit_to_app_store: false
