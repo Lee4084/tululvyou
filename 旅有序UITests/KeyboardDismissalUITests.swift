@@ -3,7 +3,7 @@ import XCTest
 final class KeyboardDismissalUITests: XCTestCase {
     @MainActor
     func testTappingBlankAreaDismissesKeyboardWithoutLosingInput() {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launchArguments.append("--ui-testing-no-animation")
         app.launch()
         app.buttons["新建返程计划"].tap()

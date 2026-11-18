@@ -3,7 +3,7 @@ import XCTest
 final class PersonalCenterUITests: XCTestCase {
     @MainActor
     func testWishesUnfinishedTripSettingsAndLegalPages() {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launchArguments += ["--ui-testing-no-animation", "--ui-testing-personal"]
         app.launch()
         app.buttons["进入途鹿旅游"].tap()

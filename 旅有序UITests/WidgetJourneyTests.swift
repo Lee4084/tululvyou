@@ -3,7 +3,7 @@ import XCTest
 final class WidgetJourneyTests: XCTestCase {
     @MainActor
     func testWidgetGalleryIsAvailableFromHomeScreen() throws {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launchArguments.append("--ui-testing-reminder")
         app.launch()
         app.buttons["进入途鹿旅游"].tap()

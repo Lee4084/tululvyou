@@ -3,7 +3,7 @@ import XCTest
 final class ReminderJourneyTests: XCTestCase {
     @MainActor
     func testReminderCanBeEnabledAndDisabledSeparately() throws {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launchArguments.append("--ui-testing-reminder")
         app.launch()
         app.buttons["进入途鹿旅游"].tap()

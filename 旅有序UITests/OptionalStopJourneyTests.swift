@@ -3,7 +3,7 @@ import XCTest
 final class OptionalStopJourneyTests: XCTestCase {
     @MainActor
     func testStopFieldsAppearOnlyAfterAddingAndCanBeRemoved() {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launch()
         app.buttons["进入途鹿旅游"].tap()
         app.buttons["新建返程计划"].tap()

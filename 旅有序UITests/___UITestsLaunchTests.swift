@@ -1,4 +1,4 @@
 import XCTest
 final class LvYouXuLaunchTests: XCTestCase {
-    func testLaunch() { XCUIApplication(bundleIdentifier: "com.huankecontact.test").launch() }
+    func testLaunch() { XCUIApplication(bundleIdentifier: "com.lvyouxucn.app").launch() }
 }

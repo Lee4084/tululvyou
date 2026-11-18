@@ -3,7 +3,7 @@ import XCTest
 final class RouteMapJourneyTests: XCTestCase {
     @MainActor
     func testTripWithoutStopsKeepsOriginalMapFlow() {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launchArguments += ["--ui-testing-no-animation", "--ui-testing-route"]
         app.launch()
         app.buttons["进入途鹿旅游"].tap()
@@ -17,7 +17,7 @@ final class RouteMapJourneyTests: XCTestCase {
 
     @MainActor
     func testSavedStopAppearsAsOrderedMapPoint() {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launchArguments += ["--ui-testing-no-animation", "--ui-testing-route-stops"]
         app.launch()
         app.buttons["进入途鹿旅游"].tap()
@@ -36,7 +36,7 @@ final class RouteMapJourneyTests: XCTestCase {
 
     @MainActor
     func testSavedTripOpensRealRouteMap() throws {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launchArguments.append("--ui-testing-route")
         app.launch()
         app.buttons["进入途鹿旅游"].tap()

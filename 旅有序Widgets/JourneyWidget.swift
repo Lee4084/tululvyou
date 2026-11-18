@@ -23,7 +23,7 @@ private struct JourneyData: Codable {
     }
 
     static func current(now: Date = Date()) -> JourneyData? {
-        guard let defaults = UserDefaults(suiteName: "group.www.huankecontact.test"),
+        guard let defaults = UserDefaults(suiteName: "group.com.lvyouxucn.app"),
               let bytes = defaults.data(forKey: "LvYouXu.widget.plan.v1"),
               let value = try? JSONDecoder().decode(JourneyData.self, from: bytes),
               value.departureDate > now else { return nil }

@@ -1,7 +1,7 @@
 import XCTest
 final class LvYouXuUITests: XCTestCase {
     func testBrandNameAcrossWelcomeHomeAndAbout() {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launchArguments.append("--ui-testing-no-animation")
         app.launch()
         XCTAssertTrue(app.staticTexts["途鹿旅游"].waitForExistence(timeout: 10))
@@ -13,7 +13,7 @@ final class LvYouXuUITests: XCTestCase {
     }
 
     func testLaunchShowsThreeTabs() {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launch()
         XCTAssertTrue(app.staticTexts["时间提醒"].waitForExistence(timeout: 10))
         XCTAssertTrue(app.staticTexts["路线查看"].exists)
@@ -36,7 +36,7 @@ final class LvYouXuUITests: XCTestCase {
     }
 
     func testWelcomeCreatesPlan() {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launch()
         app.buttons["新建返程计划"].tap()
         XCTAssertTrue(app.staticTexts["填写返程信息"].waitForExistence(timeout: 10))

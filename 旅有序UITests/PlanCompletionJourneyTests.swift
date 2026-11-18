@@ -3,7 +3,7 @@ import XCTest
 final class PlanCompletionJourneyTests: XCTestCase {
     @MainActor
     func testMissingDateOpensExistingPlanBasics() throws {
-        let app = XCUIApplication(bundleIdentifier: "com.huankecontact.test")
+        let app = XCUIApplication(bundleIdentifier: "com.lvyouxucn.app")
         app.launch()
         app.buttons["进入途鹿旅游"].tap()
         app.buttons["＋ 新建返程计划"].tap()
