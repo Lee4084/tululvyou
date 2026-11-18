@@ -1,0 +1,19 @@
+workflows:
+  ios-verify:
+    name: 途鹿旅游 · iOS 编译检查
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    environment:
+      xcode: latest
+    scripts:
+      - name: 编译 iPhone 模拟器版本
+        script: |
+          set -euo pipefail
+          xcodebuild \
+            -project "旅有序.xcodeproj" \
+            -scheme "旅有序" \
+            -configuration Release \
+            -destination "generic/platform=iOS Simulator" \
+            -derivedDataPath "$CM_BUILD_DIR/DerivedData" \
+            CODE_SIGNING_ALLOWED=NO \
+            build
